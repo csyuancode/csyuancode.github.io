@@ -46,6 +46,9 @@
           open_in_new: false
       }
   </script>
+   <!-- 评论 -->
+   <link rel="stylesheet" href="/css/gitment.css">
+   <script src="/js/gitment.js"></script>
 </head>
 <body>
   <div id="container">
@@ -207,59 +210,20 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/tool/git-pull/" class="archive-article-date">
-      <time datetime="2017-10-05T04:36:33.000Z" itemprop="datePublished">10-05</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/tool/git-pull/">create</a>
-    </h1>
-  
+      <div class="body-wrap"><div id="gitment"></div>
+<!-- 主页不要加载gitment -->
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/tool/">tool</a>
-    </div>
-
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+<script>
+var gitment = new Gitment({
+owner: 'cs876321722@outlook.com',
+repo: 'back',
+oauth: {
+client_id: '3478952f5e3ade063629',
+client_secret: '3ca8b3ada58c7993cbb385839f83ba81eb04231a',
+ },
+})
+gitment.render('gitment')
+</script>
 </div>
       <footer id="footer">
     <div class="outer">
