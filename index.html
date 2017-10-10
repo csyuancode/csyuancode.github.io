@@ -143,7 +143,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Simulator/" style="font-size: 10px;">Simulator</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/docker-compose/" style="font-size: 13.33px;">docker compose</a> <a href="/tags/docker-engine/" style="font-size: 13.33px;">docker-engine</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/install/" style="font-size: 20px;">install</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/win/" style="font-size: 16.67px;">win</a> <a href="/tags/可视化/" style="font-size: 10px;">可视化</a> <a href="/tags/监控工具/" style="font-size: 10px;">监控工具</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+                        <a href="/tags/Simulator/" style="font-size: 10px;">Simulator</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/docker-compose/" style="font-size: 13.33px;">docker compose</a> <a href="/tags/docker-engine/" style="font-size: 13.33px;">docker-engine</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/install/" style="font-size: 20px;">install</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/win/" style="font-size: 16.67px;">win</a> <a href="/tags/可视化/" style="font-size: 10px;">可视化</a> <a href="/tags/监控工具/" style="font-size: 10px;">监控工具</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
                     </div>
                 </section>
                 
@@ -215,10 +215,104 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-git-server" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/tools/git-server/" class="article-date">
+      <time datetime="2017-10-10T11:36:33.000Z" itemprop="datePublished">2017-10-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/tools/git-server/">git server</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>ssh</li>
+<li>git </li>
+</ul>
+<h2 id="gitosis"><a href="#gitosis" class="headerlink" title="gitosis"></a>gitosis</h2><h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><p>仓库服务器执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">useradd git</div><div class="line">mkdir -p /home/git</div><div class="line">chown -R git:git /home/git</div></pre></td></tr></table></figure></p>
+<p>密钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp  ~/.ssh/id_rsa.pub   /tmp/git.pub</div></pre></td></tr></table></figure></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/res0nat0r/gitosis.git</div><div class="line">cd gitosis</div><div class="line">python setup.py install</div></pre></td></tr></table></figure>
+<p>初始化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su  git</div><div class="line">gitosis-init &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
+<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p>拉取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$git clone git@192.168.16.232:repositories/gitosis-admin.git</div><div class="line">$ tree -L 2 gitosis-admin</div><div class="line">gitosis-admin</div><div class="line">├── gitosis.conf</div><div class="line">└── keydir</div><div class="line">    └── git@ubuntu.pub</div></pre></td></tr></table></figure></p>
+<p>配置密钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp ~/.ssh/id_rsa.pub  gitosis-admin/keydir/cs.pub</div></pre></td></tr></table></figure></p>
+<p>添加权限 <strong>gitosis.conf</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[group dev]  </div><div class="line">members = cs #这里的cs对上面公匙cs.pub文件名cs  </div><div class="line">writable = test #项目名test</div></pre></td></tr></table></figure></p>
+<h3 id="测试拉取"><a href="#测试拉取" class="headerlink" title="测试拉取"></a>测试拉取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir  test &amp;&amp; cd test</div><div class="line">echo &quot;测试test仓库&quot;&gt;rep</div><div class="line">git init</div><div class="line">git add .</div><div class="line">git  commit -am &quot;add test&quot;</div><div class="line">git remote add origin git@192.168.16.232:test.git</div><div class="line">git  push origin master</div></pre></td></tr></table></figure>
+<blockquote>
+<p>提示要密码 <br><br>设置密码（root用户操作）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">passwd gits</div><div class="line">2次 123456</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su gits</div><div class="line">echo &quot;你的密钥&quot;&gt;&gt;~/.ssh/authorized_keys</div></pre></td></tr></table></figure></p>
+<h2 id="gitolite"><a href="#gitolite" class="headerlink" title="gitolite"></a>gitolite</h2><h3 id="添加用户-1"><a href="#添加用户-1" class="headerlink" title="添加用户"></a>添加用户</h3><p>仓库服务器执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">useradd gits</div><div class="line">mkdir -p /home/gits</div><div class="line">chown -R gits:gits  /home/gits</div></pre></td></tr></table></figure></p>
+<p>初始化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ cp  ~/.ssh/id_rsa.pub   /tmp/git.pub</div><div class="line">$ su gits</div><div class="line">$ git clone https://github.com/sitaramc/gitolite</div><div class="line">$ gitolite/install -to $HOME/bin</div><div class="line">$ ~/bin/gitolite setup -pk /tmp/git.pub</div></pre></td></tr></table></figure></p>
+<p><strong>密码</strong></p>
+<p>见gitosis测试拉取的操作</p>
+<h3 id="管理-1"><a href="#管理-1" class="headerlink" title="管理"></a>管理</h3><p>本地拉取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">git clone gits@192.168.16.232:repositories/gitolite-admin</div><div class="line">``` </div><div class="line">&gt; </div><div class="line">正克隆到 &apos;gitolite-admin&apos;...  &lt;br /&gt;</div><div class="line">gits@192.168.16.232&apos;s password:  &lt;br /&gt;</div><div class="line">remote: Counting objects: 6, done. &lt;br /&gt;</div><div class="line">remote: Compressing objects: 100% (4/4), done. &lt;br /&gt;</div><div class="line">remote: Total 6 (delta 0), reused 0 (delta 0)</div><div class="line">接收对象中: 100% (6/6), 完成. &lt;br /&gt;</div><div class="line">检查连接... 完成。 &lt;br /&gt;</div><div class="line"></div><div class="line">查看目录</div></pre></td></tr></table></figure></p>
+<p>$ tree -L 2  gitolite-admin<br>gitolite-admin<br>├── conf<br>│   └── gitolite.conf<br>└── keydir<br>    └── git.pub<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp密钥，配置权限</div></pre></td></tr></table></figure></p>
+<p>$ cat  gitolite-admin/conf/gitolite.conf<br>repo gitolite-admin<br>    RW+     =   git</p>
+<p>repo testing<br>    RW+     =   @all<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; RW+  所有权限  &lt;br /&gt;</div><div class="line">doc: https://github.com/sitaramc/gitolite#access-rule-examples &lt;br /&gt;</div><div class="line"></div><div class="line"></div><div class="line">最后</div></pre></td></tr></table></figure></p>
+<p>git add .<br>git commit -am “add new user xx”<br>git push origin master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;更多高级配置在/home/gits/.gitolite.rc</div><div class="line"></div><div class="line">## gogs</div><div class="line">官网 https://try.gogs.io/</div><div class="line"></div><div class="line">带**UI**的git server</div><div class="line"></div><div class="line">比gitlab轻量</div></pre></td></tr></table></figure></p>
+<h1 id="Pull-image-from-Docker-Hub"><a href="#Pull-image-from-Docker-Hub" class="headerlink" title="Pull image from Docker Hub."></a>Pull image from Docker Hub.</h1><p>$ docker pull gogs/gogs</p>
+<h1 id="Create-local-directory-for-volume"><a href="#Create-local-directory-for-volume" class="headerlink" title="Create local directory for volume."></a>Create local directory for volume.</h1><p>$ mkdir -p /var/gogs</p>
+<h1 id="Use-docker-run-for-the-first-time"><a href="#Use-docker-run-for-the-first-time" class="headerlink" title="Use docker run for the first time."></a>Use <code>docker run</code> for the first time.</h1><p>$ docker run –name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</p>
+<h1 id="Use-docker-start-if-you-have-stopped-it"><a href="#Use-docker-start-if-you-have-stopped-it" class="headerlink" title="Use docker start if you have stopped it."></a>Use <code>docker start</code> if you have stopped it.</h1><p>$ docker start gogs<br>```</p>
+<blockquote>
+<p>doc <a href="https://github.com/gogits/gogs/tree/master/docker#usage" target="_blank" rel="external">https://github.com/gogits/gogs/tree/master/docker#usage</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+    </div>
+
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-git-pull" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tool/git-pull/" class="article-date">
+      <a href="/tools/git-pull/" class="article-date">
       <time datetime="2017-10-05T04:36:33.000Z" itemprop="datePublished">2017-10-05</time>
 </a>
     </div>
@@ -232,7 +326,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/tool/git-pull/">create</a>
+      <a class="article-title" href="/tools/git-pull/">git pull</a>
     </h1>
   
 
@@ -255,7 +349,7 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/tool/">tool</a>
+    <a class="article-category-link" href="/categories/tools/">tools</a>
     </div>
 
 
@@ -880,122 +974,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/install/">install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/">log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/win/">win</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-安装ElasticSearch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/ELK/elasticsearch/安装ElasticSearch/" class="article-date">
-      <time datetime="2017-01-25T11:56:10.000Z" itemprop="datePublished">2017-01-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/ELK/elasticsearch/安装ElasticSearch/">安装elasticsearch</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="elasticsearch-目录结构"><a href="#elasticsearch-目录结构" class="headerlink" title="elasticsearch 目录结构"></a>elasticsearch 目录结构</h2><table>
-<thead>
-<tr>
-<th>type</th>
-<th>description</th>
-<th>location</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>home</td>
-<td>Home of elasticsearch installation</td>
-<td>/usr/share/elasticsearch </td>
-</tr>
-<tr>
-<td>bin</td>
-<td>Binary scripts including elasticsearch to start a node</td>
-<td>/usr/share/elasticsearch/bin</td>
-</tr>
-<tr>
-<td>conf</td>
-<td>Configuration files elasticsearch.yml and logging.yml</td>
-<td>/etc/elasticsearch</td>
-</tr>
-<tr>
-<td>conf</td>
-<td>Environment variables including heap size,file descriptors</td>
-<td>/etc/default/elasticsearch</td>
-</tr>
-<tr>
-<td>data</td>
-<td>The location of the data files</td>
-<td>/var/lib/elasticsearch/</td>
-</tr>
-<tr>
-<td>logs</td>
-<td>Log files location</td>
-<td>/var/log/elasticsearch</td>
-</tr>
-<tr>
-<td>plugins</td>
-<td>Plugin files location</td>
-<td>/usr/share/elasticsearch/plugins</td>
-</tr>
-</tbody>
-</table>
-<p>下载地址</p>
-<h4 id="window7"><a href="#window7" class="headerlink" title="window7"></a>window7</h4><p>bin目录执行安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">F:\ELK\elasticsearch-2.4.1\bin&gt;service install</div><div class="line">Installing service      :  &quot;elasticsearch-service-x64&quot;</div><div class="line">Using JAVA_HOME (64-bit):  &quot;F:\java\jdk8&quot;</div><div class="line">The service &apos;elasticsearch-service-x64&apos; has been installed.</div></pre></td></tr></table></figure></p>
-<p>安装成功，如果启动失败（进logs目录，查看错误信息）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[error] [ 6376] Failed creating java %JAVA_HOME%\jre\bin\server\jvm.dll</div><div class="line"> [error] [ 6376] 系统找不到指定的路径。</div></pre></td></tr></table></figure></p>
-<p> 直接利用管理服务<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> #运行 service manager 会弹出服务管理界面 修改jvm指定路径</div><div class="line">F:\ELK\elasticsearch-2.4.1\bin&gt;service manager</div></pre></td></tr></table></figure></p>
-<h4 id="debian8"><a href="#debian8" class="headerlink" title="debian8"></a>debian8</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i  elasticsearch-2.4.2.deb</div><div class="line">bin$&gt; ./elasticsearch   #启动提示没有权限</div></pre></td></tr></table></figure>
-<p>需要授权执行命令<strong> chmod +x bin/elasticsearch  </strong><br>再次执行<strong> ./elasticsearch -d </strong>即可后台启动<br>使用<strong> ps aux|grep elasticsearch </strong>可以查看是否启动</p>
-<p><strong>设置开机启动</strong><br>创建脚本 start.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!bin/bash</div><div class="line">export JAVA_HOME=/usr/bin/java</div><div class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</div><div class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</div><div class="line"> #切换到cs用户（带环境变量）</div><div class="line">su -cs&lt;&lt;!</div><div class="line">cd /opt/elasticsearch/bin</div><div class="line">./elasticsearch &amp;</div><div class="line">exit</div><div class="line">!</div></pre></td></tr></table></figure></p>
-<p>修改启动文件 mousepad /etc/init.d/elasticsearch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!bin/bash</div><div class="line">### BEGIN INIT INFO</div><div class="line"># Provides:          elasticsearch</div><div class="line"># Required-Start:    $all</div><div class="line"># Required-Stop:     $all</div><div class="line"># Default-Start:     2 3 4 5</div><div class="line"># Default-Stop:      0 1 6</div><div class="line"># Short-De.ion: starts the elasticsearch  server</div><div class="line"># De.ion:       starts elasticsearch using start-stop-daemon</div><div class="line">### END INIT INFO</div><div class="line">sh /opt/elasticsearch/start.sh</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/ELK/">ELK</a><a class="article-category-link" href="/categories/ELK/elasticsearch/">elasticsearch</a>
-    </div>
-
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/install/">install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/search/">search</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/win/">win</a></li></ul>
     </div>
 
       
