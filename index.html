@@ -143,7 +143,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Simulator/" style="font-size: 10px;">Simulator</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/docker-compose/" style="font-size: 13.33px;">docker compose</a> <a href="/tags/docker-engine/" style="font-size: 13.33px;">docker-engine</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/install/" style="font-size: 20px;">install</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/safe/" style="font-size: 10px;">safe</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/win/" style="font-size: 16.67px;">win</a> <a href="/tags/可视化/" style="font-size: 10px;">可视化</a> <a href="/tags/监控工具/" style="font-size: 10px;">监控工具</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+                        <a href="/tags/Simulator/" style="font-size: 10px;">Simulator</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/docker-compose/" style="font-size: 13.33px;">docker compose</a> <a href="/tags/docker-engine/" style="font-size: 13.33px;">docker-engine</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/install/" style="font-size: 20px;">install</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/online/" style="font-size: 10px;">online</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/safe/" style="font-size: 10px;">safe</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/win/" style="font-size: 16.67px;">win</a> <a href="/tags/可视化/" style="font-size: 10px;">可视化</a> <a href="/tags/监控工具/" style="font-size: 10px;">监控工具</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
                     </div>
                 </section>
                 
@@ -215,6 +215,94 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-on-line" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/other/on-line/" class="article-date">
+      <time datetime="2017-10-27T04:36:33.000Z" itemprop="datePublished">2017-10-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/other/on-line/">上网</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>  有时候因工作需要，查询资料，下载，就需要上网</p>
+<p>  <strong>linux 环境下</strong></p>
+<ul>
+<li>pip </li>
+<li>shadowsocks</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>pip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://bootstrap.pypa.io/get-pip.py</div><div class="line">python get-pip.py</div></pre></td></tr></table></figure></p>
+<p>shadowsocks<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo pip install shadowsocks</div></pre></td></tr></table></figure></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h4><p>ss.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>:<span class="string">"server_ip"</span>,</div><div class="line">    <span class="attr">"server_port"</span>:<span class="number">8888</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</div><div class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</div><div class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>多号<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>: <span class="string">"server_ip"</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>: <span class="number">1080</span>,</div><div class="line">    <span class="attr">"port_password"</span>: &#123;</div><div class="line">        <span class="attr">"8881"</span>: <span class="string">"aaaa81"</span>,  </div><div class="line">        <span class="attr">"8882"</span>: <span class="string">"aaaa82"</span>,</div><div class="line">        <span class="attr">"8883"</span>: <span class="string">"aaaa83"</span>,</div><div class="line">        <span class="attr">"8884"</span>: <span class="string">"aaa84"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"timeout"</span>: <span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>: <span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>ssserver –help</strong></p>
+<p><code>-d start/stop/restart</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver  -c  /xx/ss.json  -d start</div></pre></td></tr></table></figure></p>
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><p>ss.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$cat  /xx/ss.json</div><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;server_ip&quot;,</div><div class="line">    &quot;server_port&quot;: 443,</div><div class="line">    &quot;password&quot;: &quot;mypassword&quot;,</div><div class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">    &quot;remarks&quot;: &quot;&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>sslocal –help</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sslocal -c  /xx/ss.json</div></pre></td></tr></table></figure></p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><img src="http://ojtd6k176.bkt.clouddn.com/proxy-12.56.png" alt="proxy"></p>
+<ul>
+<li>首先通过SS Local和VPS进行通信，通过Socks5协议进行通信 <br></li>
+<li>SS Local连接到VPS， 并对Socks5中传输的数据进行对称加密传输，传输的数据格式是SS的协议</li>
+<li>SS Server收到请求后，对数据解密，按照SS协议来解析数据。</li>
+<li>SS Server根据协议内容转发请求。</li>
+<li>SS Server获取请求结果后回传给SS Local</li>
+<li>SS Local获取结果回传给应用程序<br>下面2者必须同时满足</li>
+</ul>
+<p>1.代理服务器本地可以访问到;</p>
+<p>2.代理服务器可以访问目标网站。</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>小脚本，再次吐槽qt客户端，太重了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line"></div><div class="line">var=&apos;&apos;</div><div class="line">cd /opt/Shadowsocks</div><div class="line">name=`whoami`</div><div class="line"></div><div class="line">if [ ! -d &apos;/home/$name/ss&apos; ];then</div><div class="line">   mkdir ~/ss</div><div class="line">fi</div><div class="line"> </div><div class="line">function state()&#123;</div><div class="line">  var=$(ps -ef | grep sslocal | grep -v grep | awk &apos;&#123;print $2&#125;&apos;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">state</div><div class="line"></div><div class="line">if test -z $var ;then</div><div class="line">  sslocal -c  $PWD/ss.json &gt;&gt;~/ss/log 2&gt;&amp;1 &amp;</div><div class="line">else</div><div class="line">  echo &quot;kill ---$var&quot;</div><div class="line">  kill -9 $var</div><div class="line">  state</div><div class="line">  if test -z $var ;then rm -r ~/ss ;fi</div><div class="line">fi</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/other/">other</a>
+    </div>
+
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/online/">online</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-es-shield" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -285,8 +373,7 @@
 <blockquote>
 <p>cs@debian:`$ curl -u cs  “<a href="http://localhost:9200/?pretty" target="_blank" rel="external">http://localhost:9200/?pretty</a>“  <br><br>Enter host password for user ‘cs’: <br><br>{ <br><br>  “name” : “Sepulchre”,<br><br>  “cluster_name” : “elasticsearch”,<br><br>  “cluster_uuid” : “Ey7sWEIPRZGstn2LSKCCTQ”,<br><br>  “version” : {<br><br>    “number” : “2.4.2”,<br><br>    “build_hash” : “161c65a337d4b422ac0c805f284565cf2014bb84”,<br><br>    “build_timestamp” : “2016-11-17T11:51:03Z”,<br><br>    “build_snapshot” : false,<br><br>    “lucene_version” : “5.5.2”<br><br>  },<br><br>  “tagline” : “You Know, for Search”<br><br>}</p>
 </blockquote>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>没有总结</p>
-<p>还是<code>sudo dpkg -i elasticsearch*.deb</code>爽呀，不用看脚本，加入大*吧！噗。。。。加入蝶变</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>注意脚本运行，主要参数（变量）值</p>
 
       
     </div>
@@ -955,74 +1042,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/install/">install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/监控工具/">监控工具</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-kibana" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/ELK/kibana/kibana/" class="article-date">
-      <time datetime="2017-01-25T13:34:20.000Z" itemprop="datePublished">2017-01-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/ELK/kibana/kibana/">kibana</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="debian"><a href="#debian" class="headerlink" title="debian"></a>debian</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$&gt;sudo dpkg -i kibana-4.6.1-amd64.deb</div><div class="line">$&gt;dpkg -L  kibana</div></pre></td></tr></table></figure>
-<h4 id="win"><a href="#win" class="headerlink" title="win"></a>win</h4><p><a href="#">nssm</a></p>
-<h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><p><strong> logstash.conf </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">output &#123;</div><div class="line">    elasticsearch &#123;</div><div class="line">        hosts =&gt; [&quot;127.0.0.1:9200&quot;]</div><div class="line">        index =&gt; &quot;logstash-nginx-json-%&#123;+YYYY.MM&#125;&quot;</div><div class="line">    &#125;</div><div class="line">   stdout &#123;codec =&gt; rubydebug&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>只有日志输入到es，才会触发创建索引</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/ELK/">ELK</a><a class="article-category-link" href="/categories/ELK/kibana/">kibana</a>
-    </div>
-
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/install/">install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/win/">win</a></li></ul>
     </div>
 
       
