@@ -12,8 +12,7 @@ pip
 shadowsocks
 
 安装pip12wget https://bootstrap.pypa.io/get-pip.pypython get-pip.py
-shadowsocks1$sudo pip install shadowsocks
-配置服务端ss.json12345678910&amp;#123;    &quot;">
+shadowsocks1$sudo pip install shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="上网">
 <meta property="og:url" content="http://yoursite.com/other/on-line/index.html">
@@ -25,10 +24,9 @@ pip
 shadowsocks
 
 安装pip12wget https://bootstrap.pypa.io/get-pip.pypython get-pip.py
-shadowsocks1$sudo pip install shadowsocks
-配置服务端ss.json12345678910&amp;#123;    &quot;">
+shadowsocks1$sudo pip install shadowsocks">
 <meta property="og:image" content="http://ojtd6k176.bkt.clouddn.com/proxy-12.56.png">
-<meta property="og:updated_time" content="2017-10-29T13:02:19.655Z">
+<meta property="og:updated_time" content="2017-11-13T11:34:30.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="上网">
 <meta name="twitter:description" content="准备  有时候因工作需要，查询资料，下载，就需要上网
@@ -38,8 +36,7 @@ pip
 shadowsocks
 
 安装pip12wget https://bootstrap.pypa.io/get-pip.pypython get-pip.py
-shadowsocks1$sudo pip install shadowsocks
-配置服务端ss.json12345678910&amp;#123;    &quot;">
+shadowsocks1$sudo pip install shadowsocks">
 <meta name="twitter:image" content="http://ojtd6k176.bkt.clouddn.com/proxy-12.56.png">
   
     <link rel="alternative" href="/atom.xml" title="随心而记" type="application/atom+xml">
@@ -288,6 +285,7 @@ shadowsocks1$sudo pip install shadowsocks
 </ul>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>pip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://bootstrap.pypa.io/get-pip.py</div><div class="line">python get-pip.py</div></pre></td></tr></table></figure></p>
 <p>shadowsocks<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo pip install shadowsocks</div></pre></td></tr></table></figure></p>
+<a id="more"></a> 
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h4><p>ss.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>:<span class="string">"server_ip"</span>,</div><div class="line">    <span class="attr">"server_port"</span>:<span class="number">8888</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</div><div class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</div><div class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>多号<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>: <span class="string">"server_ip"</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>: <span class="number">1080</span>,</div><div class="line">    <span class="attr">"port_password"</span>: &#123;</div><div class="line">        <span class="attr">"8881"</span>: <span class="string">"aaaa81"</span>,  </div><div class="line">        <span class="attr">"8882"</span>: <span class="string">"aaaa82"</span>,</div><div class="line">        <span class="attr">"8883"</span>: <span class="string">"aaaa83"</span>,</div><div class="line">        <span class="attr">"8884"</span>: <span class="string">"aaa84"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"timeout"</span>: <span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>: <span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>ssserver –help</strong></p>
@@ -317,7 +315,7 @@ shadowsocks1$sudo pip install shadowsocks
         <p><span>本文标题:</span><a href="/other/on-line/">上网</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Cheng Shuai 的个人博客">Cheng Shuai</a></p>
         <p><span>发布时间:</span>2017年10月27日 - 12时36分</p>
-        <p><span>最后更新:</span>2017年10月29日 - 21时02分</p>
+        <p><span>最后更新:</span>2017年11月13日 - 19时34分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/other/on-line/" title="上网">http://yoursite.com/other/on-line/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/other/on-line/　　作者: Cheng Shuai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -462,7 +460,7 @@ gitment.render('gitment')
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >游客到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>

@@ -5,22 +5,16 @@
   
   <title>docker-compose | 随心而记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装git下载地址:https://github.com/docker/compose/releases
-推荐pip安装123sudo pip install -U docker-composechmod +x /usr/local/bin/docker-composedocker-compose -version
-示例123456789101112131415161718192021222324">
+  <meta name="description" content="安装git下载地址:https://github.com/docker/compose/releases">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker-compose">
 <meta property="og:url" content="http://yoursite.com/linux/debian/docker/compose/index.html">
 <meta property="og:site_name" content="随心而记">
-<meta property="og:description" content="安装git下载地址:https://github.com/docker/compose/releases
-推荐pip安装123sudo pip install -U docker-composechmod +x /usr/local/bin/docker-composedocker-compose -version
-示例123456789101112131415161718192021222324">
-<meta property="og:updated_time" content="2017-11-13T10:52:21.986Z">
+<meta property="og:description" content="安装git下载地址:https://github.com/docker/compose/releases">
+<meta property="og:updated_time" content="2017-11-13T11:31:31.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker-compose">
-<meta name="twitter:description" content="安装git下载地址:https://github.com/docker/compose/releases
-推荐pip安装123sudo pip install -U docker-composechmod +x /usr/local/bin/docker-composedocker-compose -version
-示例123456789101112131415161718192021222324">
+<meta name="twitter:description" content="安装git下载地址:https://github.com/docker/compose/releases">
   
     <link rel="alternative" href="/atom.xml" title="随心而记" type="application/atom+xml">
   
@@ -260,8 +254,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>git下载地址:<a href="https://github.com/docker/compose/releases" target="_blank" rel="external">https://github.com/docker/compose/releases</a></p>
-<p>推荐pip安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo pip install -U docker-compose</div><div class="line">chmod +x /usr/local/bin/docker-compose</div><div class="line">docker-compose -version</div></pre></td></tr></table></figure></p>
+        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>git下载地址:<a href="https://github.com/docker/compose/releases" target="_blank" rel="external">https://github.com/docker/compose/releases</a><br><a id="more"></a><br>推荐pip安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo pip install -U docker-compose</div><div class="line">chmod +x /usr/local/bin/docker-compose</div><div class="line">docker-compose -version</div></pre></td></tr></table></figure></p>
 <p>示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">version: &apos;2&apos;</div><div class="line">services:</div><div class="line">  jupyter:</div><div class="line">    image: registry.cn-hangzhou.aliyuncs.com/denverdino/tensorflow:1.0.0</div><div class="line">    container_name: jupyter</div><div class="line">    ports:</div><div class="line">      - &quot;8888:8888&quot;</div><div class="line">    environment:</div><div class="line">      - PASSWORD=tensorflow</div><div class="line">    volumes:</div><div class="line">      - &quot;/tmp/tensorflow_logs&quot;</div><div class="line">      - &quot;./notebooks:/root/notebooks&quot;</div><div class="line">    command:</div><div class="line">      - &quot;/run_jupyter.sh&quot;</div><div class="line">      - &quot;/root/notebooks&quot;</div><div class="line">  tensorboard:</div><div class="line">    image: registry.cn-hangzhou.aliyuncs.com/denverdino/tensorflow:1.0.0</div><div class="line">    container_name: tensorboard</div><div class="line">    ports:</div><div class="line">      - &quot;6006:6006&quot;</div><div class="line">    volumes_from:</div><div class="line">      - jupyter</div><div class="line">    command:</div><div class="line">      - &quot;tensorboard&quot;</div><div class="line">      - &quot;--logdir&quot;</div><div class="line">      - &quot;/tmp/tensorflow_logs&quot;</div><div class="line">      - &quot;--host&quot;</div><div class="line">      - &quot;0.0.0.0&quot;</div></pre></td></tr></table></figure></p>
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><blockquote>
 <p>build</p>
@@ -318,7 +311,7 @@
         <p><span>本文标题:</span><a href="/linux/debian/docker/compose/">docker-compose</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Cheng Shuai 的个人博客">Cheng Shuai</a></p>
         <p><span>发布时间:</span>2017年02月27日 - 12时08分</p>
-        <p><span>最后更新:</span>2017年11月13日 - 18时52分</p>
+        <p><span>最后更新:</span>2017年11月13日 - 19时31分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/linux/debian/docker/compose/" title="docker-compose">http://yoursite.com/linux/debian/docker/compose/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/linux/debian/docker/compose/　　作者: Cheng Shuai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -474,7 +467,7 @@ gitment.render('gitment')
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >游客到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>

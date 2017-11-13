@@ -6,22 +6,19 @@
   <title>kibana | 随心而记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="debian12$&amp;gt;sudo dpkg -i kibana-4.6.1-amd64.deb$&amp;gt;dpkg -L  kibana
-logstashnginx日志 logstash
-创建索引 logstash.conf 1234567output &amp;#123;    elasticsearch &amp;#123;        hosts =&amp;gt; [&amp;quot;127.0.0.1:9200&amp;q">
+logstashnginx日志 logstash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kibana">
 <meta property="og:url" content="http://yoursite.com/ELK/kibana/kibana/index.html">
 <meta property="og:site_name" content="随心而记">
 <meta property="og:description" content="debian12$&amp;gt;sudo dpkg -i kibana-4.6.1-amd64.deb$&amp;gt;dpkg -L  kibana
-logstashnginx日志 logstash
-创建索引 logstash.conf 1234567output &amp;#123;    elasticsearch &amp;#123;        hosts =&amp;gt; [&amp;quot;127.0.0.1:9200&amp;q">
+logstashnginx日志 logstash">
 <meta property="og:image" content="http://i.imgur.com/6Dobxli.jpg">
-<meta property="og:updated_time" content="2017-11-13T11:07:19.338Z">
+<meta property="og:updated_time" content="2017-11-13T11:33:14.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kibana">
 <meta name="twitter:description" content="debian12$&amp;gt;sudo dpkg -i kibana-4.6.1-amd64.deb$&amp;gt;dpkg -L  kibana
-logstashnginx日志 logstash
-创建索引 logstash.conf 1234567output &amp;#123;    elasticsearch &amp;#123;        hosts =&amp;gt; [&amp;quot;127.0.0.1:9200&amp;q">
+logstashnginx日志 logstash">
 <meta name="twitter:image" content="http://i.imgur.com/6Dobxli.jpg">
   
     <link rel="alternative" href="/atom.xml" title="随心而记" type="application/atom+xml">
@@ -263,7 +260,7 @@ logstashnginx日志 logstash
       
           
         <h4 id="debian"><a href="#debian" class="headerlink" title="debian"></a>debian</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$&gt;sudo dpkg -i kibana-4.6.1-amd64.deb</div><div class="line">$&gt;dpkg -L  kibana</div></pre></td></tr></table></figure>
-<h3 id="logstash"><a href="#logstash" class="headerlink" title="logstash"></a>logstash</h3><p>nginx日志 <a href="/ELK/logstash/logstash/" title="logstash">logstash</a><br><img src="http://i.imgur.com/6Dobxli.jpg" alt="kibana ip分布"></p>
+<h3 id="logstash"><a href="#logstash" class="headerlink" title="logstash"></a>logstash</h3><p>nginx日志 <a href="/ELK/logstash/logstash/" title="logstash">logstash</a><br><a id="more"></a><br><img src="http://i.imgur.com/6Dobxli.jpg" alt="kibana ip分布"></p>
 <h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><p><strong> logstash.conf </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">output &#123;</div><div class="line">    elasticsearch &#123;</div><div class="line">        hosts =&gt; [&quot;127.0.0.1:9200&quot;]</div><div class="line">        index =&gt; &quot;logstash-nginx-json-%&#123;+YYYY.MM&#125;&quot;</div><div class="line">    &#125;</div><div class="line">   stdout &#123;codec =&gt; rubydebug&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
 <li>只有日志输入到es，才会触发创建索引</li>
@@ -280,7 +277,7 @@ logstashnginx日志 logstash
         <p><span>本文标题:</span><a href="/ELK/kibana/kibana/">kibana</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Cheng Shuai 的个人博客">Cheng Shuai</a></p>
         <p><span>发布时间:</span>2017年01月25日 - 21时34分</p>
-        <p><span>最后更新:</span>2017年11月13日 - 19时07分</p>
+        <p><span>最后更新:</span>2017年11月13日 - 19时33分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/ELK/kibana/kibana/" title="kibana">http://yoursite.com/ELK/kibana/kibana/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/ELK/kibana/kibana/　　作者: Cheng Shuai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -436,7 +433,7 @@ gitment.render('gitment')
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >游客到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>

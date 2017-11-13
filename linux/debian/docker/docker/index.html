@@ -6,21 +6,18 @@
   <title>docker | 随心而记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="安装 engine卸载旧版sudo apt-get purge docker.io*
-编辑 /etc/apt/sources.list.d/docker.list1echo &amp;apos;deb https://apt.dockerproject.org/repo debian-jessie main&amp;apos;&amp;gt; /etc/apt/sources.list.d/docker.list
-安装依">
+编辑 /etc/apt/sources.list.d/docker.list1echo &amp;apos;deb https://apt.dockerproject.org/repo debian-jessie main&amp;apos;&amp;gt; /etc/apt/sources.list.d/docker.list">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker">
 <meta property="og:url" content="http://yoursite.com/linux/debian/docker/docker/index.html">
 <meta property="og:site_name" content="随心而记">
 <meta property="og:description" content="安装 engine卸载旧版sudo apt-get purge docker.io*
-编辑 /etc/apt/sources.list.d/docker.list1echo &amp;apos;deb https://apt.dockerproject.org/repo debian-jessie main&amp;apos;&amp;gt; /etc/apt/sources.list.d/docker.list
-安装依">
-<meta property="og:updated_time" content="2017-05-01T13:20:40.000Z">
+编辑 /etc/apt/sources.list.d/docker.list1echo &amp;apos;deb https://apt.dockerproject.org/repo debian-jessie main&amp;apos;&amp;gt; /etc/apt/sources.list.d/docker.list">
+<meta property="og:updated_time" content="2017-11-13T11:31:53.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker">
 <meta name="twitter:description" content="安装 engine卸载旧版sudo apt-get purge docker.io*
-编辑 /etc/apt/sources.list.d/docker.list1echo &amp;apos;deb https://apt.dockerproject.org/repo debian-jessie main&amp;apos;&amp;gt; /etc/apt/sources.list.d/docker.list
-安装依">
+编辑 /etc/apt/sources.list.d/docker.list1echo &amp;apos;deb https://apt.dockerproject.org/repo debian-jessie main&amp;apos;&amp;gt; /etc/apt/sources.list.d/docker.list">
   
     <link rel="alternative" href="/atom.xml" title="随心而记" type="application/atom+xml">
   
@@ -262,6 +259,7 @@
           
         <h4 id="安装-engine"><a href="#安装-engine" class="headerlink" title="安装 engine"></a>安装 engine</h4><p>卸载旧版<br><code>sudo apt-get purge docker.io*</code></p>
 <p>编辑 <code>/etc/apt/sources.list.d/docker.list</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &apos;deb https://apt.dockerproject.org/repo debian-jessie main&apos;&gt; /etc/apt/sources.list.d/docker.list</div></pre></td></tr></table></figure></p>
+<a id="more"></a> 
 <p>安装依赖：<code>apt-transport-https</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install docker-engine</div><div class="line">docker version</div><div class="line">...permission问题</div></pre></td></tr></table></figure>
 <p>创建组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> cat /etc/group | grep ^docker  #不存在</div><div class="line"> sudo groupadd docker  #存在忽略，创建组</div><div class="line">sudo gpasswd -a $&#123;USER&#125; docker   #添加当前用户到组</div><div class="line">sudo restart  #重启生效</div></pre></td></tr></table></figure></p>
@@ -284,7 +282,7 @@
         <p><span>本文标题:</span><a href="/linux/debian/docker/docker/">docker</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Cheng Shuai 的个人博客">Cheng Shuai</a></p>
         <p><span>发布时间:</span>2017年02月21日 - 12时08分</p>
-        <p><span>最后更新:</span>2017年05月01日 - 21时20分</p>
+        <p><span>最后更新:</span>2017年11月13日 - 19时31分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/linux/debian/docker/docker/" title="docker">http://yoursite.com/linux/debian/docker/docker/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/linux/debian/docker/docker/　　作者: Cheng Shuai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -440,7 +438,7 @@ gitment.render('gitment')
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >游客到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>

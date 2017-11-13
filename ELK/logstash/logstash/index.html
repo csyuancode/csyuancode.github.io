@@ -6,21 +6,18 @@
   <title>logstash | 随心而记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="debian安装12 $&amp;gt;sudo dpkg -i logstash-2.4.1_all.deb$&amp;gt; dpkg -L  logstash
-win安装service工具 nssm
-配置logstash.conf123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+win安装service工具 nssm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="logstash">
 <meta property="og:url" content="http://yoursite.com/ELK/logstash/logstash/index.html">
 <meta property="og:site_name" content="随心而记">
 <meta property="og:description" content="debian安装12 $&amp;gt;sudo dpkg -i logstash-2.4.1_all.deb$&amp;gt; dpkg -L  logstash
-win安装service工具 nssm
-配置logstash.conf123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
-<meta property="og:updated_time" content="2017-11-13T11:05:31.851Z">
+win安装service工具 nssm">
+<meta property="og:updated_time" content="2017-11-13T11:34:12.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="logstash">
 <meta name="twitter:description" content="debian安装12 $&amp;gt;sudo dpkg -i logstash-2.4.1_all.deb$&amp;gt; dpkg -L  logstash
-win安装service工具 nssm
-配置logstash.conf123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+win安装service工具 nssm">
   
     <link rel="alternative" href="/atom.xml" title="随心而记" type="application/atom+xml">
   
@@ -261,7 +258,7 @@ win安装service工具 nssm
       
           
         <h4 id="debian安装"><a href="#debian安装" class="headerlink" title="debian安装"></a>debian安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> $&gt;sudo dpkg -i logstash-2.4.1_all.deb</div><div class="line">$&gt; dpkg -L  logstash</div></pre></td></tr></table></figure>
-<h4 id="win安装"><a href="#win安装" class="headerlink" title="win安装"></a>win安装</h4><p>service工具 <a href="http://www.nssm.cc/download" target="_blank" rel="external">nssm</a></p>
+<h4 id="win安装"><a href="#win安装" class="headerlink" title="win安装"></a>win安装</h4><p>service工具 <a href="http://www.nssm.cc/download" target="_blank" rel="external">nssm</a><br><a id="more"></a> </p>
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>logstash.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line">input &#123;</div><div class="line">    file &#123;</div><div class="line">        path =&gt; [ &quot;F:/ELK/nginx-1.10.2/logs/access.log&quot; ]</div><div class="line">		type =&gt; &quot;nginx_access&quot;</div><div class="line">        start_position =&gt; &quot;beginning&quot;</div><div class="line">        ignore_older =&gt; 0</div><div class="line">    &#125;</div><div class="line">	file &#123;</div><div class="line">        path =&gt; [ &quot;F:/ELK/nginx-1.10.2/logs/access_json.log&quot; ]</div><div class="line">		#codec =&gt; &quot;json&quot;</div><div class="line">		type =&gt; &quot;nginx_json&quot;</div><div class="line">        start_position =&gt; &quot;beginning&quot;</div><div class="line">        ignore_older =&gt; 0</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">filter &#123;</div><div class="line"> if [type] == &quot;nginx_access&quot; &#123;</div><div class="line">    grok &#123;</div><div class="line">	    patterns_dir =&gt; &quot;F:/ELK/logstash-2.4.1/patterns&quot;        #设置自定义正则路径</div><div class="line">        match =&gt; &#123; &quot;message&quot; =&gt; &quot;%&#123;NGINXACCESS&#125;&quot; &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    date &#123;</div><div class="line">      match =&gt; [ &quot;log_timestamp&quot;,&quot;dd/MMM/yyyy:HH:mm:ss Z&quot;]</div><div class="line"></div><div class="line">    &#125;</div><div class="line">   </div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  if [type] == &quot;nginx_json&quot; &#123;</div><div class="line">        json &#123;</div><div class="line">            source =&gt; &quot;message&quot;</div><div class="line">            #target =&gt; &quot;doc&quot;</div><div class="line">            remove_field =&gt; [&quot;message&quot;]</div><div class="line">        &#125;</div><div class="line">		if [@fields][ip] != &quot;-&quot; &#123;</div><div class="line">			geoip &#123;</div><div class="line">					source =&gt; &quot;[@fields][ip]&quot;</div><div class="line"> 					target =&gt; &quot;geoip&quot;</div><div class="line">					fields =&gt; [&quot;city_name&quot;, &quot;continent_code&quot;, &quot;country_code3&quot;, &quot;country_name&quot;, &quot;ip&quot;, &quot;postal_code&quot;, &quot;region_name&quot;]</div><div class="line">					database =&gt; &quot;F:/ELK/logstash-2.4.1/ip/GeoLiteCity.dat&quot;</div><div class="line">					add_field =&gt; [ &quot;[geoip][coordinates]&quot;, &quot;%&#123;[geoip][longitude]&#125;&quot; ]</div><div class="line">					add_field =&gt; [ &quot;[geoip][coordinates]&quot;, &quot;%&#123;[geoip][latitude]&#125;&quot;  ]</div><div class="line">			&#125;</div><div class="line">		</div><div class="line">			mutate &#123;</div><div class="line">					convert =&gt; [ &quot;[geoip][coordinates]&quot;, &quot;float&quot;]</div><div class="line">					</div><div class="line">			&#125;</div><div class="line">   </div><div class="line">		&#125;</div><div class="line"> 	&#125;</div><div class="line"> </div><div class="line">&#125;</div><div class="line">output &#123;</div><div class="line"> if [type] == &quot;nginx_access&quot; &#123;</div><div class="line">    elasticsearch &#123;</div><div class="line">        hosts =&gt; [&quot;127.0.0.1:9200&quot;]</div><div class="line">        index =&gt; &quot;logstash-nginx-access-%&#123;+YYYY.MM&#125;&quot;</div><div class="line">    &#125;</div><div class="line">   stdout &#123;codec =&gt; rubydebug&#125;</div><div class="line">  &#125;</div><div class="line">  if [type] == &quot;nginx_json&quot; &#123;</div><div class="line">    elasticsearch &#123;</div><div class="line">        hosts =&gt; [&quot;127.0.0.1:9200&quot;]</div><div class="line">        index =&gt; &quot;logstash-nginx-json-%&#123;+YYYY.MM&#125;&quot;</div><div class="line">    &#125;</div><div class="line">   stdout &#123;codec =&gt; rubydebug&#125;</div><div class="line">  &#125;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
@@ -274,7 +271,7 @@ win安装service工具 nssm
         <p><span>本文标题:</span><a href="/ELK/logstash/logstash/">logstash</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Cheng Shuai 的个人博客">Cheng Shuai</a></p>
         <p><span>发布时间:</span>2017年01月25日 - 21时27分</p>
-        <p><span>最后更新:</span>2017年11月13日 - 19时05分</p>
+        <p><span>最后更新:</span>2017年11月13日 - 19时34分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/ELK/logstash/logstash/" title="logstash">http://yoursite.com/ELK/logstash/logstash/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/ELK/logstash/logstash/　　作者: Cheng Shuai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -430,7 +427,7 @@ gitment.render('gitment')
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >游客到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>

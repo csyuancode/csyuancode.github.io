@@ -15,7 +15,7 @@ node 安装12345$tar  -zxvf  node.tar.gz$cd node$./config  --prefix=/opt/node$su
 <meta property="og:description" content="准备工具nodegithexo
 node 安装12345$tar  -zxvf  node.tar.gz$cd node$./config  --prefix=/opt/node$sudo make$sudo make install
 添加环境变量1234567#set nodejsexport NODE_HOME=/opt/nodeexport PATH=$NODE_HOME/bin:$PATH">
-<meta property="og:updated_time" content="2017-10-05T04:51:30.300Z">
+<meta property="og:updated_time" content="2017-11-13T11:35:16.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建hexo">
 <meta name="twitter:description" content="准备工具nodegithexo
@@ -263,6 +263,7 @@ node 安装12345$tar  -zxvf  node.tar.gz$cd node$./config  --prefix=/opt/node$su
         <h3 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h3><p>node<br>git<br>hexo</p>
 <h3 id="node-安装"><a href="#node-安装" class="headerlink" title="node 安装"></a>node 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$tar</span>  -zxvf  node.tar.gz</div><div class="line"><span class="variable">$cd</span> node</div><div class="line">$./config  --prefix=/opt/node</div><div class="line"><span class="variable">$sudo</span> make</div><div class="line"><span class="variable">$sudo</span> make install</div></pre></td></tr></table></figure>
 <p>添加环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#set nodejs</span></div><div class="line"><span class="built_in">export</span> NODE_HOME=/opt/node</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$NODE_HOME</span>/bin:<span class="variable">$PATH</span></div><div class="line"><span class="variable">$node</span> -v <span class="comment">#显示版本号</span></div><div class="line"><span class="variable">$sudo</span> node -v <span class="comment">#当用root执行，commond not found</span></div><div class="line"><span class="comment">#mousepad  ~/.bashrc</span></div><div class="line"><span class="built_in">alias</span> sudo=<span class="string">'sudo env PATH=$PATH'</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a> 
 <h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$cd</span> ~/.ssh <span class="comment">#查看没有密钥</span></div><div class="line">$ ssh-keygen -t rsa -C <span class="string">"你git的user.email"</span></div></pre></td></tr></table></figure>
 <p>路径默认 最好输入密码<br>最后得到两个文件：id_rsa和id_rsa.pub</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cat ~/.ssh/id_rsa.pub <span class="comment">#复制到github ssh key </span></div><div class="line"><span class="variable">$ssh</span> git@github.com</div></pre></td></tr></table></figure>
@@ -281,7 +282,7 @@ node 安装12345$tar  -zxvf  node.tar.gz$cd node$./config  --prefix=/opt/node$su
         <p><span>本文标题:</span><a href="/other/搭建hexo/">搭建hexo</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Cheng Shuai 的个人博客">Cheng Shuai</a></p>
         <p><span>发布时间:</span>2017年01月13日 - 00时46分</p>
-        <p><span>最后更新:</span>2017年10月05日 - 12时51分</p>
+        <p><span>最后更新:</span>2017年11月13日 - 19时35分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/other/搭建hexo/" title="搭建hexo">http://yoursite.com/other/搭建hexo/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/other/搭建hexo/　　作者: Cheng Shuai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -437,7 +438,7 @@ gitment.render('gitment')
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >游客到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
