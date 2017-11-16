@@ -123,8 +123,6 @@
                         
                             <li><a href="/archives">归档</a></li>
                         
-                            <li><a href="/issue">评论</a></li>
-                        
                             <li><a href="/tags">分类&amp;标签</a></li>
                         
                         </ul>
@@ -145,7 +143,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Simulator/" style="font-size: 10px;">Simulator</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/docker-compose/" style="font-size: 15px;">docker compose</a> <a href="/tags/docker-engine/" style="font-size: 15px;">docker-engine</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/install/" style="font-size: 20px;">install</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/online/" style="font-size: 10px;">online</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/safe/" style="font-size: 10px;">safe</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/win/" style="font-size: 15px;">win</a> <a href="/tags/可视化/" style="font-size: 10px;">可视化</a> <a href="/tags/监控工具/" style="font-size: 10px;">监控工具</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+                        <a href="/tags/Simulator/" style="font-size: 10px;">Simulator</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/docker-compose/" style="font-size: 15px;">docker compose</a> <a href="/tags/docker-engine/" style="font-size: 15px;">docker-engine</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/install/" style="font-size: 20px;">install</a> <a href="/tags/issues/" style="font-size: 10px;">issues</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/online/" style="font-size: 10px;">online</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/safe/" style="font-size: 10px;">safe</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/win/" style="font-size: 15px;">win</a> <a href="/tags/可视化/" style="font-size: 10px;">可视化</a> <a href="/tags/监控工具/" style="font-size: 10px;">监控工具</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
                     </div>
                 </section>
                 
@@ -196,8 +194,6 @@
                 
                     <li><a href="/archives">归档</a></li>
                 
-                    <li><a href="/issue">评论</a></li>
-                
                     <li><a href="/tags">分类&amp;标签</a></li>
                 
                 <div class="clearfix"></div>
@@ -218,6 +214,78 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-live" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/nosql/redis/live/" class="article-date">
+      <time datetime="2017-02-08T16:08:06.000Z" itemprop="datePublished">2017-02-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nosql/redis/live/">Redis cluster 监控</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>Redis live<br> Redis Live是一个用来监控redis实例,分析查询语句并且有web界面的监控工具,使用python编写</p>
+<h4 id="Install-Dependencies"><a href="#Install-Dependencies" class="headerlink" title="Install Dependencies"></a>Install Dependencies</h4><ul>
+<li><strong>tornado</strong> pip install tornado</li>
+<li><strong>redis.py</strong> pip install redis</li>
+<li><strong>python-dateutil</strong> pip install python-dateutil<br>if you’re running Python &lt; 2.7:</li>
+<li><strong> argparse</strong> pip install argparse<br>官方说明： <a href="http://www.nkrode.com/article/real-time-dashboard-for-redis">http://www.nkrode.com/article/real-time-dashboard-for-redis</a>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nosql/">nosql</a><a class="article-category-link" href="/categories/nosql/redis/">redis</a>
+    </div>
+
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/install/">install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/监控工具/">监控工具</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/nosql/redis/live/#more">进入详情 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-kibana" class="article article-type-post" itemscope itemprop="blogPost">
   
